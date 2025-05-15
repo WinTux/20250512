@@ -45,5 +45,12 @@ namespace otrito {
     public class Clasesita {
         public static void Metodo() { }
     }
-    
+    namespace anidado {
+
+        namespace otro2 {
+            public class EjemploNamespace { 
+            
+            }
+        }
+    }
 }
