@@ -1,4 +1,5 @@
 ﻿using otrito;
+using PrimerProyectoCsharp.POO;
 using temporal;
 namespace PrimerProyectoCsharp
 {
@@ -57,6 +58,22 @@ namespace PrimerProyectoCsharp
             tiposDeDatos();
             int res = multiplicar(5, 10);
             Console.WriteLine("El resultado de la multiplicacion es: " + res);
+
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Black; 
+            Console.WriteLine("**** PROGRAMACIÓN ORIENTADA A OBJETOS ");
+            Bicicleta bici = new Bicicleta();
+            Console.WriteLine("Habemus bicicletum");
+            Console.WriteLine("El modelo de la bicicleta es: " + bici.Modelo);
+            Bicicleta bici2 = new Bicicleta("Urbano", "Bianchi", 26, 12.5f);
+            Console.WriteLine("El modelo de la bicicleta es: " + bici2.Modelo);
+            Bicicleta bici3 = new Bicicleta("X11");
+            bici2.Ruedas_size = 8000;
+            bici2.Peso = -23.0008f;
+            //bici2.calculadorDePeso(10.5f, 12.5f, -15.5f);
+            Console.WriteLine("El modelo de la bicicleta es: " + bici2.Modelo + ", su tamaño de rueda es: "+bici2.Ruedas_size + "[in] y el peso es "+ bici2.Peso+"[kg]");
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         private static void tiposDeDatos()
