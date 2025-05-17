@@ -58,12 +58,13 @@ namespace PrimerProyectoCsharp
             tiposDeDatos();
             int res = multiplicar(5, 10);
             Console.WriteLine("El resultado de la multiplicacion es: " + res);
-
+            #region Programación Orientada a Objetos
             Console.BackgroundColor = ConsoleColor.Green;
             Console.ForegroundColor = ConsoleColor.Black; 
             Console.WriteLine("**** PROGRAMACIÓN ORIENTADA A OBJETOS ");
             Bicicleta bici = new Bicicleta();
             Console.WriteLine("Habemus bicicletum");
+            #region Encapsulamiento
             Console.WriteLine("El modelo de la bicicleta es: " + bici.Modelo);
             Bicicleta bici2 = new Bicicleta("Urbano", "Bianchi", 26, 12.5f);
             Console.WriteLine("El modelo de la bicicleta es: " + bici2.Modelo);
@@ -72,8 +73,32 @@ namespace PrimerProyectoCsharp
             bici2.Peso = -23.0008f;
             //bici2.calculadorDePeso(10.5f, 12.5f, -15.5f);
             Console.WriteLine("El modelo de la bicicleta es: " + bici2.Modelo + ", su tamaño de rueda es: "+bici2.Ruedas_size + "[in] y el peso es "+ bici2.Peso+"[kg]");
+            #endregion
+
+            #region Herencia
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("**** HERENCIA ");
+            Persona persona = new Persona();
+            persona.Nombre = "Pepe";
+            persona.Apellido = "Perales";
+            Console.WriteLine("El nombre de la persona es: " + persona.Nombre + " " + persona.Apellido);
+            persona.presentarse();
+            persona.decirEdad();
+            persona.nombrecompleto();
+            Estudiante est01 = new Estudiante(123456,"Ing. Sistemas");
+            Console.WriteLine("El nombre del estudiante es: " + est01.Nombre + " " + est01.Apellido);
+            Console.WriteLine("La matrícula del estudiante es: " + est01.Matricula + " y su carrera es "+est01.Carrera);
+            Estudiante est02 = new Estudiante("Ana","Roca",23,54321,5000091,"Admin. de Empresas");
+            est02.presentarse(); // :u   O.O
+            est02.presentarseComoEstudiante();
+            #endregion
+
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
+            #endregion
+
+            
         }
 
         private static void tiposDeDatos()
