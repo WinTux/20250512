@@ -94,11 +94,52 @@ namespace PrimerProyectoCsharp
             est02.presentarseComoEstudiante();
             #endregion
 
+            #region Polimorfismo 
+            Estudiante est03 = new Estudiante(123456, "Ing. Agropecuaria");
+            est03.votar();
+            Ciudadano[] ciudadanos = new Ciudadano[2];// [][]
+            ciudadanos[0] = est03;
+            ciudadanos[1] = new Docente();
+
+            //Ejemplo errado
+            //Ciudadano ciu = new Ciudadano();
+
+            ciudadanos[0].votar();
+            ciudadanos[1].votar();
+            #endregion
+
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
             #endregion
 
+            #region Estructuras de datos
+
+            // Estructuras estáticas
+            int[] arreglo = new int[5]; // [][][][][] -> 10, 0, -3, 5356000, 0; 0,0,0,0,0
+            int[,] arreglo2 = new int[5,3];
+            /*
             
+            [][][]
+            [][][]
+            [][][]
+            [][][]
+            [][][]
+             
+            [][][][][]
+            [][][][][]
+            [][][][][]
+             
+             */
+
+
+            // Estructuras dinámicas
+
+            //Arreglos
+
+
+
+            #endregion
+
         }
 
         private static void tiposDeDatos()

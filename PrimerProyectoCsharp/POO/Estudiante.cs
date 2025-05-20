@@ -27,5 +27,44 @@ namespace PrimerProyectoCsharp.POO
         public void presentarse() {
             Console.WriteLine("Hola, soy el/la estudiante " + Nombre + " " + Apellido + ", tengo " + Edad + " años y mi CI es " + CI + ". Estoy en la carrera " + Carrera + " con matrícula " + Matricula);
         }
+
+        public void votar()
+        {
+            Console.WriteLine("Soy estudiante y puedo votar");
+        }
+
+        public void migrar()
+        {
+            Console.WriteLine("Soy estudiante y puedo migrar");
+        }
+
+        public void respirar()
+        {
+            Console.WriteLine("Soy estudiante y puedo respirar");
+        }
+
+        public void alimentarse(string comida)
+        {
+            Console.WriteLine("Soy estudiante y puedo alimentarme de " + comida);
+        }
+
+        public void reproducirse()
+        {
+            Console.WriteLine("Soy estudiante y puedo reproducirme");
+        }
+
+        public void crecer()
+        {
+            Console.WriteLine("Soy estudiante y puedo crecer");
+        }
+
+        public void morir()
+        {
+            Console.WriteLine("Soy estudiante y puedo morir (F)");
+        }
+        public void correr()
+        {
+            Console.WriteLine("Soy estudiante y puedo correr");
+        }
     }
 }
