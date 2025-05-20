@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimerProyectoCsharp.POO
 {
-    public class Estudiante : Persona
+    public class Estudiante : Persona, Ciudadano, SerVivo
     {
         public int Matricula { get; set; }
         public string Carrera { get; set; }
