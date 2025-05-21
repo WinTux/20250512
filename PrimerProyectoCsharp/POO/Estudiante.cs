@@ -66,5 +66,9 @@ namespace PrimerProyectoCsharp.POO
         {
             Console.WriteLine("Soy estudiante y puedo correr");
         }
+        public string ToString()
+        {
+            return "Hola, soy el/la estudiante " + Nombre + " " + Apellido + ", tengo " + Edad + " años y mi CI es " + CI + ". Estoy en la carrera " + Carrera + " con matrícula " + Matricula;
+        }
     }
 }

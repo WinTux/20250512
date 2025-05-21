@@ -115,29 +115,91 @@ namespace PrimerProyectoCsharp
             #region Estructuras de datos
 
             // Estructuras estáticas
+            //Arreglos
             int[] arreglo = new int[5]; // [][][][][] -> 10, 0, -3, 5356000, 0; 0,0,0,0,0
-            int[,] arreglo2 = new int[5,3];
+            int[] arr_aux = new int[6];
+            arr_aux[0] = arreglo[0];
+
+            arr_aux[1] = arreglo[1];
+            arr_aux[2] = arreglo[2];
+            arr_aux[3] = arreglo[3];
+            arr_aux[4] = arreglo[4];
+            arr_aux[5] = 10;
+            arreglo = arr_aux;
+            Console.WriteLine("El tamaño del arreglo es: " + arreglo.Length);
+            Console.WriteLine("El primer elementodel arreglo es: " + arreglo[0]);
             /*
             
-            [][][]
-            [][][]
+            [             ] 0   4
+            [             ] 1   3
+            [             ] 2   2
+            [             ] 3   1
+            [             ] 4   0
+             */
+            int[,] arreglo2 = new int[5,3]; // fila, columna
+            /*
+            
+            [10][20][30]
+            [40][][]
             [][][]
             [][][]
             [][][]
              
-            [][][][][]
-            [][][][][]
-            [][][][][]
+            [10][40][][][]
+            [20][][][][]
+            [30][][][][]
              
              */
+            arreglo2[0,0] = 10;
+            arreglo2[0, 1] = 20;
+            arreglo2[0, 2] = 30;
+            arreglo2[1, 0] = 40;
+            //Ejemplo errado
+            //arreglo2[2, 4] = 50;
 
+            int[,,] arreglo3D = new int[5, 3, 2]; // fila, columna, profundidad
+            /*
+            0      1
 
+                    0 1 2
+            [][][] [][][] 0 
+            [][][] [][][] 1
+            [][][] [][][] 2
+            [][][] [][][] 3
+            [][][] [][][] 4
+             */
+
+            int[,,,,] arreglo5D = new int[5, 3, 2, 4, 6]; // fila, columna, profundidad, algo1, algo2
+            arreglo5D[2, 0, 1, 3, 3] = 10;
             // Estructuras dinámicas
+            // Listas
+            List<int> listita = new List<int>();
+            listita.Add(10);
+            listita.Add(20);
+            listita.Add(30);
+            // Iteración: for, while, foreach, do-while
+            for (int i = 0; i < listita.Count; i++)
+            {
+                Console.WriteLine("El valor de la lista es: " + listita[i]);
+            }
+            List<Estudiante> estudiantes = new List<Estudiante>();
+            estudiantes.Add(est01);
+            estudiantes.Add(est02);
+            estudiantes.Add(est03);
+            for (int i = 0; i < estudiantes.Count; i++)
+            {
+                Console.WriteLine("El valor de la lista de estudiantes es: " + estudiantes[i].ToString());
+            }
 
-            //Arreglos
+            Console.WriteLine("Ese es el estudiante est01:");
+            Console.WriteLine(est01.Apellido);
+            Console.WriteLine("Ese es el estudiante est02:");
+            Console.WriteLine(est02.Nombre);
+            // Eliminar elementos
+            listita.Remove(20);
+            // ¿funcionará con estudiantes? ¿cómo?
 
-
-
+            // Cola y Pilas
             #endregion
 
         }
