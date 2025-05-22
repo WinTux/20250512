@@ -114,7 +114,7 @@ namespace PrimerProyectoCsharp
 
             #region Estructuras de datos
 
-            // Estructuras estáticas
+            #region Estructuras estáticas
             //Arreglos
             int[] arreglo = new int[5]; // [][][][][] -> 10, 0, -3, 5356000, 0; 0,0,0,0,0
             int[] arr_aux = new int[6];
@@ -171,8 +171,9 @@ namespace PrimerProyectoCsharp
 
             int[,,,,] arreglo5D = new int[5, 3, 2, 4, 6]; // fila, columna, profundidad, algo1, algo2
             arreglo5D[2, 0, 1, 3, 3] = 10;
-            // Estructuras dinámicas
-            // Listas
+            #endregion
+            #region Estructuras dinámicas
+            #region Listas
             List<int> listita = new List<int>();
             listita.Add(10);
             listita.Add(20);
@@ -196,12 +197,103 @@ namespace PrimerProyectoCsharp
             Console.WriteLine("Ese es el estudiante est02:");
             Console.WriteLine(est02.Nombre);
             // Eliminar elementos
-            listita.Remove(20);
-            // ¿funcionará con estudiantes? ¿cómo?
+            int entero_para_eliminar = 20;
+            listita.Remove(entero_para_eliminar);
+            Console.WriteLine("El valor de la lista, trs la eliminación, es: ");
+            foreach (int elemento in listita)
+                Console.WriteLine("Elemento: " + elemento);
 
+            // ¿funcionará con estudiantes? ¿cómo?
+            Estudiante est_para_eliminar = new Estudiante("Ana","Roca",23, 54321, 5000091, "Admin. de Empresas");
+            estudiantes.Remove(est_para_eliminar);
+            Console.WriteLine("Lista de estudiantes tras la eliminación");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Blue;
+            for (int i = 0; i < estudiantes.Count; i++)
+            {
+                Console.WriteLine("El valor de la lista de estudiantes es: " + estudiantes[i].ToString());
+            }
+
+            Console.WriteLine("Lista de estudiantes tras la eliminación II");
+
+            /*
+            estudiantes.Remove(estudiantes[1]);
+
+            for (int i = 0; i < estudiantes.Count; i++)
+            {
+                Console.WriteLine("El valor de la lista de estudiantes es: " + estudiantes[i].ToString());
+            }
+            */
+            eliminarEstudiante(5000091, estudiantes);
+            for (int i = 0; i < estudiantes.Count; i++)
+            {
+                Console.WriteLine("El valor de la lista de estudiantes es: " + estudiantes[i].ToString());
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
+            #endregion
             // Cola y Pilas
+            #region Colas
+            Queue<int> cola = new Queue<int>(); // FIFO (kiu)
+            cola.Enqueue(10);
+            cola.Enqueue(20);
+            cola.Enqueue(30);
+            cola.Enqueue(40);
+            Console.WriteLine("Elementos de la cola");
+            foreach (int elemento in cola)
+            {
+                Console.WriteLine("Elemento: " + elemento);
+            }
+            cola.Dequeue();
+            int sacado = cola.Dequeue();
+            Console.WriteLine("Elementos de la cola tras sacar un elemento");
+            cola.Enqueue(sacado);
+
+            foreach (int elemento in cola)
+            {
+                Console.WriteLine("Elemento: " + elemento);
+            }
+
+
+            // Personas
+            Queue<Persona> colaPersonas = new Queue<Persona>();
+            colaPersonas.Enqueue(new Persona("Pepe", "Perales", 23, "12345678"));
+            colaPersonas.Enqueue(new Persona("Ana", "Roca", 23, "54321"));
+            Persona p_sacada = colaPersonas.Dequeue();
             #endregion
 
+            #region Pilas
+            Stack<int> pila = new Stack<int>(); // LIFO
+            pila.Push(10);
+            pila.Push(20);
+            pila.Push(30);
+            pila.Push(40);
+            Console.WriteLine("Elementos de la pila");
+            foreach (int elemento in pila)
+            {
+                Console.WriteLine("Elemento: " + elemento);
+            }
+            Stack<int> pila_aux = new Stack<int>();
+            while (pila.Count > 0)
+            {
+                pila_aux.Push(pila.Pop());
+            }
+            #endregion
+            #endregion
+            #endregion
+
+        }
+
+        private static void eliminarEstudiante(int ci, List<Estudiante> ests)
+        {
+            foreach (Estudiante est in ests)
+            {
+                if (est.CI.Equals(ci.ToString()))
+                {
+                    ests.Remove(est);
+                    break;
+                }
+            }
         }
 
         private static void tiposDeDatos()
